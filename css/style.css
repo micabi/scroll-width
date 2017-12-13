@@ -1,0 +1,12 @@
+/* line 3, ../sass/style.scss */
+body {
+  height: 1000px;
+}
+
+/* line 7, ../sass/style.scss */
+.container {
+  position: relative;
+  top: 500px;
+  left: 100px;
+  outline: 1px solid #333;
+}

@@ -1,0 +1,12 @@
+@import "compass";
+
+body{
+  height: 1000px;
+}
+
+.container{
+  position: relative;
+  top: 500px;
+  left: 100px;
+  outline: 1px solid #333;
+}
