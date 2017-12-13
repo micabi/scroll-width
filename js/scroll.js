@@ -1,17 +1,27 @@
 $(document).ready(function(){
 
-  var winHeight = $(window).height();
-  console.log("ウィンドウの高さ: " + winHeight + "px");
-  var documentHeight = $('body').height();
-  console.log("ドキュメントの高さ: " + documentHeight + "px");
+  // ウィンドウ最下部からページの最下部までの距離 = 
+  // ドキュメントの高さ - (スクロール量 + ウィンドウの高さ)
 
-  var lineHeight = $('.line').offset().top;
-  console.log("div.lineのオフセット: " + lineHeight + "px");
+  $('.line').each(function(){
+    var thisPositionTop = $(this).offset().top;
+    console.log("lineのpositionTop :" + thisPositionTop + "px");
+    var scrollAmount = 0;
 
-  $(window).on('scroll', function(){
-    var scrollTop = $(window).scrollTop();
-    console.log("スクロール量: " + scrollTop);
-    console.log("div.lineのオフセット: " + lineHeight + "px");
-  });
+    $(window).on('scroll', function(){
+      var winHeight = $(window).height();
+      console.log("ウィンドウの高さ: " + winHeight + "px");
+      scrollAmount = $(window).scrollTop(); // スクロール量
+      console.log("スクロール量 :" + scrollAmount + "px");
+      var plus = winHeight + scrollAmount;
+      console.log("winHeight + scrollAmount: " + plus + "px");  
+      if(plus >= thisPositionTop){
+        $('p').css({'color': 'red'});
+      }else{
+        $('p').css({'color': '#000'});
+      }
+    });
+
+  }); // Each
 
 }); // End

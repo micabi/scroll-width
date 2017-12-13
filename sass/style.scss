@@ -6,7 +6,18 @@ body{
 
 .container{
   position: relative;
-  top: 500px;
+  top: 300px;
   left: 100px;
   outline: 1px solid #333;
+  .line{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 5px;
+    background-color: #EC4E20;
+  }
+  p{
+    color: #000;
+  }
 }
